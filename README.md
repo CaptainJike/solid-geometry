@@ -1,6 +1,8 @@
 # 立体几何实验室
 
-[在线体验（无需登录）](https://cone-unfolding-lab-xian.lively-bud-4907.chatgpt.site/)
+[在线体验（GitHub Pages，无需登录）](https://captainjike.github.io/solid-geometry/)
+
+GitHub Pages 由 `.github/workflows/deploy-pages.yml` 自动构建和发布。向 `main` 分支推送代码后，Actions 会安装依赖、生成静态站点并部署到上述地址；首次启用时请在仓库 Settings → Pages → Build and deployment 中将 Source 设为 **GitHub Actions**。
 
 网站由「交互实验」与「知识公式」两个主模块组成。交互实验包含 10 道高中立体几何题；知识公式按九个主题整理高中数学主干内容。桌面用侧边目录，手机使用横向模块选择，也可搜索知识点、公式和关键词。
 
