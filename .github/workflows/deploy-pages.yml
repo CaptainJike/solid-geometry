@@ -38,6 +38,15 @@ jobs:
       - name: Verify static entry point
         run: test -f dist/client/index.html
 
+      - name: Flatten project-page assets
+        run: |
+          # assetPrefix makes vinext emit /solid-geometry/_next URLs. Pages
+          # already mounts the artifact at /solid-geometry/, so the files
+          # themselves must live at the artifact root's _next directory.
+          cp -R dist/client/solid-geometry/_next dist/client/_next
+          rm -rf dist/client/solid-geometry
+          test -d dist/client/_next/static/css
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
