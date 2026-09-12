@@ -35,6 +35,9 @@ jobs:
         env:
           GITHUB_PAGES: 'true'
 
+      - name: Verify static entry point
+        run: test -f dist/client/index.html
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -8,6 +8,9 @@ import {Triangle,ArrowLeft,ArrowRight,Video,BookOpen,FlaskConical} from 'lucide-
 import {Button} from '@/components/ui/button';
 import {NativeSelect,NativeSelectOption} from '@/components/ui/native-select';
 import {SidebarProvider,Sidebar,SidebarContent,SidebarMenu,SidebarMenuItem,SidebarMenuButton} from '@/components/ui/sidebar';
+
+export const dynamic = 'force-static';
+
 export default function Home(){
  const [selected,setSelected]=useState(1),[section,setSection]=useState<'lab'|'knowledge'>('lab');const choose=(id:number)=>{setSelected(id);setSection('lab');window.scrollTo({top:0,behavior:'instant'});};
  return <><header className="site-header"><button className="brand" onClick={()=>setSection('lab')}><span className="brand-icon"><Triangle size={21}/></span><span>高中数学实验室<span className="brand-en">MATHEMATICS / LAB</span></span></button><nav aria-label="主导航"><button className={section==='lab'?'active':''} onClick={()=>setSection('lab')}><FlaskConical size={15}/>交互实验</button><button className={section==='knowledge'?'active':''} onClick={()=>setSection('knowledge')}><BookOpen size={15}/>知识公式</button></nav><span className="chapter">知识 · 公式 · 图像 · 推导</span></header>

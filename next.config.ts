@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
   output: 'export',
   ...(githubPages
     ? {
-        basePath: '/solid-geometry',
         assetPrefix: '/solid-geometry/',
       }
     : {}),
